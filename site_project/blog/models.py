@@ -7,3 +7,6 @@ class Course(models.Model):
     image=models.ImageField(upload_to="courses/%Y/%m/%d/")
     date=models.DateTimeField(auto_now=True)
     avaliable=models.BooleanField(default=True)
+
+def __str__ (self):
+    return self.name
