@@ -1,8 +1,11 @@
+{% load static %}
 <header class="top-navbar" style=" position: fixed ; width:100%; height:60px; z-index: 1; margin-top:0; display: inline-block;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="" alt="" />
+                <img src="{% static 'images/flagaze.png' %}" alt="" width="34px" height="17px"/>
+                <img src="{% static 'images/flagturk.png' %}" alt="" width="34px" height="17px"/>
+                <img src="{% static 'images/flagrus.png' %}" alt="" width="34px" height="17px"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar"></span>
