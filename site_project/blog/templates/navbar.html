@@ -1,12 +1,8 @@
 {% load static %}
-<header class="top-navbar" style=" position: fixed ; width:1000px; height:60px; z-index: 1; margin-top:0; display: inline-block;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header class="top-navbar" style="z-index:12; position:fixed;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:absolute; width:1350px;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="{% static 'images/flagaze.png' %}" alt="" width="34px" height="17px"/>
-                <img src="{% static 'images/flagturk.png' %}" alt="" width="34px" height="17px"/>
-                <img src="{% static 'images/flagrus.png' %}" alt="" width="34px" height="17px"/>
-            </a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
