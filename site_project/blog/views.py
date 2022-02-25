@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . models import Course
-from django.utils.text import slugify
+
 
 def index(request):
     return render(request,"index.html")
@@ -14,8 +14,8 @@ def courses(request):
     }
     return render(request,"courses.html",context)
 
-def course_detail(request,slug):
-    course=Course.objects.get(slug=slug)
+def course_detail(request,category_slug,course_id):
+    course=Course.objects.get(category__slug=category_slug,id = course_id)
     return render(request,"course.html",{
         "course":course
     })
