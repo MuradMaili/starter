@@ -29,7 +29,8 @@
 <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <!-- Modernizer for Portfolio -->
 <script src="{% static 'js/modernizer.js' %}"></script>
 
@@ -44,90 +45,7 @@
     {% include 'navbar.html' %}
 
     <!-- Modal -->
-    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header tit-up">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Customer Login</h4>
-                </div>
-                <div class="modal-body customer-box">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs">
-                        <li><a class="active" href="#Login" data-toggle="tab">Login</a></li>
-                        <li><a href="#Registration" data-toggle="tab">Registration</a></li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="Login">
-                            <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input class="form-control" id="email1" placeholder="Name" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input class="form-control" id="exampleInputPassword1" placeholder="Email" type="email">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										Submit
-									</button>
-                                        <a class="for-pwd" href="javascript:;">Forgot your password?</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane" id="Registration">
-                            <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input class="form-control" placeholder="Name" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input class="form-control" id="email" placeholder="Email" type="email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input class="form-control" id="mobile" placeholder="Mobile" type="email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <input class="form-control" id="password" placeholder="Password" type="password">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-10">
-                                        <button type="button" class="btn btn-light btn-radius btn-brd grd1">
-										Save &amp; Continue
-									</button>
-                                        <button type="button" class="btn btn-light btn-radius btn-brd grd1">
-										Cancel</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- LOADER -->
-    <div id="preloader">
-        <div class="loader-container">
-            <div class="progress-br float shadow">
-                <div class="progress__item"></div>
-            </div>
-        </div>
-    </div>
+    {% include 'registr.html' %}
     <!-- END LOADER -->
 
     <!-- Start header -->
@@ -142,102 +60,53 @@
 
     <div id="overviews" class="section wb">
         <div class="container">
-            <div class="row">
-
-                <div class="col-lg-9 blog-post-single">
-                    <div class="row">
-                        {% for course in courses %}
-                        <div class="col-lg-4 col-md-4 col-12 mb-3">
-                            <div class="course-item">
-                                <div class="image-blog ">
-                                    <img src="{{course.image.url}} " alt=" " class="img-fluid ">
-                                </div>
-                                <div class="course-br ">
-                                    <div class="course-title ">
-                                        <h2><a href="# " title=" ">{{course.name}}</a></h2>
-                                    </div>
-                                    <div class="course-desc ">
-                                        <p>{{course.description}}</p>
-                                    </div>
-
-                                </div>
-                                <div class="course-meta-bot ">
-                                    <ul>
-                                        <li><i class="fa fa-calendar " aria-hidden="true "></i> 6 Month</li>
-                                        <li><i class="fa fa-users " aria-hidden="true "></i> 56 Student</li>
-                                        <li><i class="fa fa-book " aria-hidden="true "></i> 7 Books</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end col -->
-
-
-                        {% endfor %}
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-                    <div class="blog-author ">
-                        <div class="author-bio ">
-                            <h3 class="author_name "><a href="# ">Murad Maili</a></h3>
-                            <h5>CEO at <a href="# ">MuradEDU</a></h5>
-                            <p class="author_det ">
-                                Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus omnis saperet docendi nec, eos ea alii molestiae aliquand.
-                            </p>
-                        </div>
-                        <div class="author-desc ">
-                            <img src="{% static 'images/murad.jpg' %}" alt="about author ">
-                            <ul class="author-social ">
-                                <li><a href="# "><i class="fa fa-facebook "></i></a></li>
-                                <li><a href="# "><i class="fa fa-instagram "></i></a></li>
-                                <li><a href="# "><i class="fa fa-skype "></i></a></li>
-                            </ul>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for course in courses %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{course.image.url}}" class="card-img-top" alt=" ">
+                        <div class="card-body">
+                            <a href="{% url 'course_detail' course.slug %}" title="">
+                            {{course.name}}
+                            </a>
+                            <p class="card-text">{{course.description}}</p>
                         </div>
                     </div>
-
-
-
                 </div>
+
+
+
                 <!-- end col -->
-                <div class="col-lg-3 col-12 right-single ">
-                    <div class="widget-search ">
-                        <div class="site-search-area ">
-                            <form method="get " id="site-searchform " action="# ">
-                                <div>
-                                    <input class="input-text form-control " name="search-k " id="search-k " placeholder="Search keywords... " type="text ">
-                                    <input id="searchsubmit " value="Search " type="submit ">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="widget-categories ">
-                        <h3 class="widget-title ">Categories</h3>
-                        <ul>
-                            <li><a href="# ">Web Development</a></li>
-                            <li><a href="# ">Mobile Development</a></li>
-                            <li><a href="# ">Algoritm</a></li>
-                            <li><a href="# ">Data Analis</a></li>
-                            <li><a href="# ">Back end development</a></li>
-                            <li><a href="# ">DataBases</a></li>
-                        </ul>
-                    </div>
-                    <div class="widget-tags ">
-                        <h3 class="widget-title ">Search Tags</h3>
-                        <ul class="tags ">
-                            <li><a href="# "><b>html5</b></a></li>
-                            <li><a href="# "><b>css3</b></a></li>
-                            <li><a href="# ">javascript</a></li>
-                            <li><a href="# ">react</a></li>
-                            <li><a href="# ">angular</a></li>
-                            <li><a href="# "><b>vue.js</b></a></li>
-                            <li><a href="# "><b>python</b></a></li>
-                            <li><a href="# "><b>django</b></a></li>
-                            <li><a href="# ">.net(C#)</a></li>
-                            <li><a href="# ">responsive</a></li>
-                        </ul>
-                    </div>
+
+
+                {% endfor %}
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            <div class="blog-author ">
+                <div class="author-bio ">
+                    <h3 class="author_name "><a href="# ">Murad Maili</a></h3>
+                    <h5>CEO at <a href="# ">MuradEDU</a></h5>
+                    <p class="author_det ">
+                        Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus omnis saperet docendi nec, eos ea alii molestiae aliquand.
+                    </p>
+                </div>
+                <div class="author-desc ">
+                    <img src="{% static 'images/murad.jpg' %}" alt="about author ">
+                    <ul class="author-social ">
+                        <li><a href="# "><i class="fa fa-facebook "></i></a></li>
+                        <li><a href="# "><i class="fa fa-instagram "></i></a></li>
+                        <li><a href="# "><i class="fa fa-skype "></i></a></li>
+                    </ul>
                 </div>
             </div>
+
+
+
+
+            <!-- end col -->
+
+
             <!-- end row -->
         </div>
         <!-- end container -->
@@ -271,7 +140,7 @@
         <!-- end container -->
     </div>
     <!-- end section -->
-    {% include 'footer_index.html' %}
+    {% include 'footer_courses.html' %}
     <!-- end footer -->
 
     <div class="copyrights ">
@@ -292,6 +161,18 @@
     <script src="{% static 'js/all.js' %} "></script>
     <!-- ALL PLUGINS -->
     <script src="{% static 'js/custom.js' %} "></script>
+    <style>
+        a {
+            font-size: 16px;
+        }
+        
+        a:hover {
+            color: orange;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 1s;
+        }
+    </style>
 
 
 </body>
