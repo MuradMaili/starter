@@ -1,0 +1,61 @@
+<div class="col-lg-3 col-12 right-single">
+    <div class="widget-search">
+        <div class="site-search-area">
+            <form method="get" id="site-searchform" action="#">
+                <div>
+                    <input class="input-text form-control" name="search-k" id="search-k" placeholder="Search keywords..." type="text" onkeyup="myfunction()">
+                    <input id="searchsubmit" value="Search" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="widget-categories">
+        <h3 class="widget-title">Categories</h3>
+        <ul>
+            {% for category in categories %}
+            <li><a href="{% url 'category_view' category.id %}">{{category.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="widget-tags">
+        <h3 class="widget-title">Search Tags</h3>
+        <ul class="tags">
+            {% for tags in tag %}
+            <li><a href="{% url 'tag_view' tags.id %}"><b>{{tags.name}}</b></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+<!-- end row -->
+</div>
+<!-- end container -->
+</div>
+<!-- end section -->
+<div class="parallax section dbcolor">
+    <div class="container">
+        <div class="row logos">
+            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                <a href="#"><img src="images/logo_01.png" alt="" class="img-repsonsive"></a>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                <a href="#"><img src="images/logo_02.png" alt="" class="img-repsonsive"></a>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                <a href="#"><img src="images/logo_03.png" alt="" class="img-repsonsive"></a>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                <a href="#"><img src="images/logo_04.png" alt="" class="img-repsonsive"></a>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                <a href="#"><img src="images/logo_05.png" alt="" class="img-repsonsive"></a>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                <a href="#"><img src="images/logo_06.png" alt="" class="img-repsonsive"></a>
+            </div>
+
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>

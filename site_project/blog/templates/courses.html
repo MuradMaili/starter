@@ -1,45 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Basic -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<!-- Mobile Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Site Metas -->
-<title>MuradEDU</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Site Icons -->
-<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
-<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-<!-- Site CSS -->
-<link rel="stylesheet" href="{% static 'style.css' %}">
-<!-- ALL VERSION CSS -->
-<link rel="stylesheet" href="{% static 'css/versions.css' %}">
-<!-- Responsive CSS -->
-<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-<!-- Custom CSS -->
-<link rel="stylesheet" href="{% static 'css/custom.css' %}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- Modernizer for Portfolio -->
-<script src="{% static 'js/modernizer.js' %}"></script>
-
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
+{% include 'basliq.html' %}
 
 <body class="host_version">
     {% include 'navbar.html' %}
@@ -60,46 +22,41 @@
 
     <div id="overviews" class="section wb">
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                {% for course in courses %}
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{{course.image.url}}" class="card-img-top" alt=" ">
-                        <div class="card-body">
-                            <a href="{% url 'course_detail' course.category.slug course.id %}" title="">
-                            {{course.name}}
-                            </a>
-                            <p class="card-text">{{course.description}}</p>
+            <div class="row" id="myrow">
+                <div class="col-lg-9 blog-post-single">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="card-lists">
+                        {% for course in courses %}
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="{{course.image.url}}" class="card-img-top" alt=" ">
+                                <div class="card-body">
+                                    <a href="{% url 'course_detail' course.id %}" title="" class="card-title">
+                                    {{course.name}}
+                                    </a>
+                                    <p class="card-text">{{course.description}}</p>
+                                   
+                                    
+                                    <div class="course-meta-bot">
+                                        <ul>
+                                            <li><i class="fa fa-calendar" aria-hidden="true">:{{course.date |date:"d M Y"}}</i></li>
+                                            <li><i class="fa fa-calendar" aria-hidden="true">:{{course.students.count}}</i></li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- end col -->
+                        {% endfor %}
+                        <!-- end col -->
                     </div>
+
                 </div>
-
-
-
-                <!-- end col -->
-
-
-                {% endfor %}
-                <!-- end col -->
+                {% include 'search.html'%}
             </div>
+
+
             <!-- end row -->
-            <div class="blog-author ">
-                <div class="author-bio ">
-                    <h3 class="author_name "><a href="# ">Murad Maili</a></h3>
-                    <h5>CEO at <a href="# ">MuradEDU</a></h5>
-                    <p class="author_det ">
-                        Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus omnis saperet docendi nec, eos ea alii molestiae aliquand.
-                    </p>
-                </div>
-                <div class="author-desc ">
-                    <img src="{% static 'images/murad.jpg' %}" alt="about author ">
-                    <ul class="author-social ">
-                        <li><a href="# "><i class="fa fa-facebook "></i></a></li>
-                        <li><a href="# "><i class="fa fa-instagram "></i></a></li>
-                        <li><a href="# "><i class="fa fa-skype "></i></a></li>
-                    </ul>
-                </div>
-            </div>
+
 
 
 
@@ -113,54 +70,22 @@
     </div>
     <!-- end section -->
 
-    <div class="parallax section dbcolor ">
-        <div class="container ">
-            <div class="row logos ">
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp ">
-                    <a href="# "><img src="{% static 'images/logo_01.png' %} " alt=" " class="img-repsonsive "></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp ">
-                    <a href="# "><img src="{% static 'images/logo_02.png' %} " alt=" " class="img-repsonsive "></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp ">
-                    <a href="# "><img src="{% static 'images/logo_03.png' %} " alt=" " class="img-repsonsive "></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp ">
-                    <a href="# "><img src="{% static 'images/logo_04.png' %} " alt=" " class="img-repsonsive "></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp ">
-                    <a href="# "><img src="{% static 'images/logo_05.png' %} " alt=" " class="img-repsonsive "></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp ">
-                    <a href="# "><img src="{% static 'images/logo_06.png' %} " alt=" " class="img-repsonsive "></a>
-                </div>
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </div>
+
     <!-- end section -->
     {% include 'footer_courses.html' %}
     <!-- end footer -->
 
-    <div class="copyrights ">
-        <div class="container ">
-            <div class="footer-distributed ">
-                <div class="footer-center ">
-                    <p class="footer-company-name ">All Rights Reserved. &copy; 2018 <a href="# ">MuradEDU</a> Design By : <a href="https://html.design/ ">html design</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- end container -->
-    </div>
+   
     <!-- end copyrights -->
 
-    <a href="# " id="scroll-to-top " class="dmtop global-radius "><i class="fa fa-angle-up "></i></a>
+    
 
     <!-- ALL JS FILES -->
     <script src="{% static 'js/all.js' %} "></script>
     <!-- ALL PLUGINS -->
     <script src="{% static 'js/custom.js' %} "></script>
+    <script src="{% static 'js/search.js' %}"></script>
+    
     <style>
         a {
             font-size: 16px;
